@@ -47,8 +47,8 @@ class WhasappController {
         }
 
         Element.prototype.css = function(styles) {
-            for (let name in style) {
-                this.style[name] = style[name];
+            for (let name in styles) {
+                this.style[name] = styles[name];
                 return this;
             }
         }
@@ -158,6 +158,64 @@ class WhasappController {
             let formData = new FormData(this.el.formPanelAddContact);
             
         });
+
+        this.el.contactsMessagesList.querySelectorAll('.contact-item').forEach(item => {
+
+            item.on('click', e => {
+
+                this.el.home.hide();
+                this.el.main.css({
+                    display: 'flex'
+                })
+
+            });
+
+        });
+
+        this.el.btnAttach.on('click', e => {
+
+            e.stopPropagation();
+
+            this.el.menuAttach.addClass('open');
+
+            document.addEventListener('click', this.closeMenuAttach.bind(this));
+
+        });
+
+        this.el.btnAttachPhoto.on('click', e => {
+
+            this.el.menuAttach.addClass('open');
+
+        });
+
+        this.el.btnAttachCamera.on('click', e => {
+
+            this.el.menuAttach.addClass('open');
+
+        });
+
+        this.el.btnAttachDocument.on('click', e => {
+
+            this.el.menuAttach.addClass('open');
+
+        });
+
+        this.el.btnAttachContact.on('click', e => {
+
+            this.el.menuAttach.addClass('open');
+
+        });
+
+    }
+
+
+    closeMenuAttach(e) {
+
+        document.removeEventListener('click', this.closeMenuAttach);
+
+        this.el.menuAttach.removeClass('open');
+
+        // console.log("Remove Menu");
 
     }
 
