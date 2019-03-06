@@ -347,7 +347,27 @@ class WhasappController {
                     img.classList.add(name);
                 });
 
-                this.el.inputText.appendChild(img);
+                //this.el.inputText.appendChild(img);
+
+                let cursor = window.getSelection();
+
+                if (!cursor.focusNode || !cursor.focusNode.id == 'input-text') {
+                    this.el.inputText.focus();
+                    cursor = window.getSelection();
+                }
+
+                let range = document.createRange();
+
+                range = cursor.getRangeAt(0);
+                range.deleteContents();
+
+                let flag = document.createDocumentFragment();
+
+                flag.appendChild(img);
+
+                range.insertNode(flag);
+
+                range.setStartAfter(img);
 
                 this.el.inputText.dispatchEvent(new Event('keyup'));
     
