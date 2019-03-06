@@ -212,6 +212,8 @@ class WhasappController {
 
             });
 
+            this._camera = new CameraController(this.el.videoCamera);
+
         });
 
         this.el.btnClosePanelCamera.on('click', e => {
