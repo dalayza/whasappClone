@@ -1,4 +1,8 @@
-class WhasappController {
+import { Format } from './../util/Format.js';
+import { CameraController } from './CameraController.js';
+
+
+export class WhasappController {
 
     constructor() {
 
