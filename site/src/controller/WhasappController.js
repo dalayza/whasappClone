@@ -224,13 +224,17 @@ export class WhasappController {
 
             this.closeAllMainPanel();
 
+            this.el.panelCamera.hide();
+
             this.el.panelMessagesContainer.show();
+
+            this._camera.stop();   
 
         });
 
         this.el.btnTakePicture.on('click', e => {
 
-            // console.log("Take picture");
+            console.log("Take picture");
 
         });
 
