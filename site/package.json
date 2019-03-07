@@ -1,0 +1,25 @@
+{
+  "name": "whasappclone",
+  "version": "1.0.0",
+  "description": "Whasapp Clone Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalayza/whasappClone.git"
+  },
+  "author": "Denis Alayza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalayza/whasappClone/issues"
+  },
+  "homepage": "https://github.com/dalayza/whasappClone#readme",
+  "dependencies": {
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
