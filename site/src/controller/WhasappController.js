@@ -2,6 +2,7 @@ import { Format } from './../util/Format.js';
 import { CameraController } from './CameraController.js';
 import { MicrophoneController } from './MicrophoneController.js';
 import { DocumentPreviewController } from './DocumentPreviewController.js';
+import { Firebase } from './../util/Firebase.js';
 
 
 export class WhasappController {
@@ -13,6 +14,7 @@ export class WhasappController {
         this.loadElementsPrototype();
         this.loadElements();
         this.initEvents();
+        this._firebase = new Firebase();
 
     }
 
@@ -410,6 +412,7 @@ export class WhasappController {
                 this.el.recordMicrophoneTimer.innerHTML = Format.toTime(timer);
 
             });
+            
 
         });
 
