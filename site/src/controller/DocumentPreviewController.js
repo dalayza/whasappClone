@@ -43,7 +43,7 @@ export class DocumentPreviewController {
                                             // console.log('pdf', pdf);
                                             pdf.getPage(1).then(page => {
                                                 // console.log('page', page);
-                                                let viewport = page.getPreviewport(1);
+                                                let viewport = page.getViewport(1);
                                                 let canvas = document.createElement('canvas');
                                                 let canvasContext = canvas.getContext('2d');
                                                 canvas.width = viewport.width;
