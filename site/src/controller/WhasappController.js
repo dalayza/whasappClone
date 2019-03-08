@@ -1,5 +1,6 @@
 import { Format } from './../util/Format.js';
 import { CameraController } from './CameraController.js';
+import { MicrophoneController } from './MicrophoneController.js';
 import { DocumentPreviewController } from './DocumentPreviewController.js';
 
 
@@ -396,15 +397,25 @@ export class WhasappController {
 
             this.startRecordMicrophoneTime();
 
+            this._microphoneController = new MicrophoneController();
+
+            this._microphoneController.on('play', e => {
+    
+            });
+
         });
 
         this.el.btnCancelMicrophone.on('click', e => {
+
+            this._microphoneController.stop();
 
             this.closeRecordMicrophone();
 
         });
 
         this.el.btnFinishMicrophone.on('click', e => {
+
+            this._microphoneController.stop();
 
             this.closeRecordMicrophone();
 
