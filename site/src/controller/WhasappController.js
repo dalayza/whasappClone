@@ -399,7 +399,9 @@ export class WhasappController {
 
             this._microphoneController = new MicrophoneController();
 
-            this._microphoneController.on('play', e => {
+            this._microphoneController.on('play', musica => {
+
+                console.log("Recibi o evento play", musica);
     
             });
 
