@@ -399,9 +399,11 @@ export class WhasappController {
 
             this._microphoneController = new MicrophoneController();
 
-            this._microphoneController.on('play', musica => {
+            this._microphoneController.on('ready', musica => {
 
-                console.log("Recibi o evento play", musica);
+                // console.log("Ready event");
+
+                this._microphoneController.startRecorder();
     
             });
 
@@ -409,7 +411,7 @@ export class WhasappController {
 
         this.el.btnCancelMicrophone.on('click', e => {
 
-            this._microphoneController.stop();
+            this._microphoneController.stopRecorder();
 
             this.closeRecordMicrophone();
 
@@ -417,7 +419,7 @@ export class WhasappController {
 
         this.el.btnFinishMicrophone.on('click', e => {
 
-            this._microphoneController.stop();
+            this._microphoneController.stopRecorder();
 
             this.closeRecordMicrophone();
 
