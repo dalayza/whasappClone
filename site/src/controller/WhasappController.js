@@ -9,12 +9,30 @@ export class WhasappController {
 
     constructor() {
 
-        console.log('Funcionando');
+        console.log('WhasappController OK');
 
-        this.loadElementsPrototype();
+        this._firebase = new Firebase();
+        this.initAuth();
+        this.elementsPrototype();
         this.loadElements();
         this.initEvents();
-        this._firebase = new Firebase();
+
+    }
+
+
+    initAuth() {
+
+        this._firebase.initAuth()
+            .then((response, token) => {
+                // console.log('response', response);
+                this._user = response.user;
+                this.el.appContent.css({
+                    display: 'flex'
+                });
+            })
+            .catch(err => {
+                console.error(err);
+            });
 
     }
 
@@ -30,7 +48,7 @@ export class WhasappController {
     }
 
 
-    loadElementsPrototype() { // asignar estilos a los elementos 
+    elementsPrototype() { // asignar estilos a los elementos 
 
         Element.prototype.hide = function() {
             this.style.display = 'none';
