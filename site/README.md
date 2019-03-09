@@ -1,8 +1,8 @@
 # whasappClone
 Projeto Whasapp Clone Javascript
 
-#Start project
+# Start project
 npm run start
 
-#Eject project
+# Eject project
 http://localhost:8080/
